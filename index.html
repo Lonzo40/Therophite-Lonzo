@@ -1,52 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jeanette & Alonso</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Upload</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Two_hummingbirds.jpg" alt="Two Hummingbirds" class="hummingbirds"/>
-    <h1>Jeanette & Alonso</h1>
-    <p class="tagline">Adventures, Love & Life</p>
-  </header>
-
-  <section class="about">
-    <h2>Our Journey</h2>
-    <p>This is a space filled with memories — from quiet moments to wild adventures. It's about love that grows, the life we're building, and the laughter we share along the way.</p>
-  </section>
-
-  <section class="gallery">
-    <h2>Moments Captured</h2>
-    <input type="file" id="upload" accept="image/*" multiple>
-    <div class="grid" id="imageGrid">
-      <!-- Uploaded images will appear here -->
+    <div class="container">
+        <h1>Upload Your Photo</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="photo">Select a photo:</label>
+            <input type="file" id="photo" name="photo" required>
+            <label for="passcode">Passcode:</label>
+            <input type="password" id="passcode" name="passcode" required>
+            <button type="submit">Upload</button>
+        </form>
     </div>
-  </section>
-
-  <footer>
-    <p>Made with ❤️ for Jeanette</p>
-  </footer>
-
-  <script>
-    const uploadInput = document.getElementById('upload');
-    const imageGrid = document.getElementById('imageGrid');
-
-    uploadInput.addEventListener('change', function() {
-      Array.from(this.files).forEach(file => {
-        const reader = new FileReader();
-        reader.onload = function(e) {
-          const img = document.createElement('img');
-          img.src = e.target.result;
-          img.alt = "Uploaded photo";
-          imageGrid.appendChild(img);
-        };
-        reader.readAsDataURL(file);
-      });
-    });
-  </script>
 </body>
 </html>
