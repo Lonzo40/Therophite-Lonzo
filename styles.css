@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -31,7 +30,7 @@ h1 {
   color: #b03060;
 }
 
-.tagline {
+tagline {
   font-size: 1.2rem;
   color: #6b4e71;
   margin-top: 0.5rem;
@@ -86,6 +85,36 @@ h1 {
 
 .grid img:hover {
   transform: scale(1.03);
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+form label {
+  font-size: 1rem;
+  color: #444;
+  margin-right: 0.5rem;
+}
+
+form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+  background-color: #e75480;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+form button:hover {
+  background-color: #c7436b;
 }
 
 footer {
